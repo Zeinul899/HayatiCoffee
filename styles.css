@@ -1,0 +1,286 @@
+/* ==========================================================
+   HAYATI COFFEE ROASTER — MINIMALIST ARCHITECTURAL DESIGN
+   Clean light aesthetic, unified single coffee accent, smooth scroll animations
+   ========================================================== */
+
+:root {
+  /* Architectural Quiet Concrete & Raw Stone Palette (Tenang, Diam, Adem) */
+  --color-sand: #F2F1ED;        /* Warm Concrete & Raw Stone (Abu-abu semen tenang) */
+  --color-canvas: #FFFFFF;      /* Clean White Canvas */
+  --color-surface: #EAE8E3;     /* Muted Ash & Soft Stone */
+  --color-border: #DCD8D0;      /* Subtle Hairline Concrete Border */
+  --color-border-dark: #C4BFB5; /* Focused Edge */
+  --color-ink: #181716;         /* Deep Carbon Charcoal (Tegas & Tenang) */
+  --color-ink-soft: #5C5955;    /* Secondary Body Text */
+  --color-ink-muted: #88847E;   /* Muted Stone Metadata */
+  --color-amber: #6E6155;       /* Subdued Warm Espresso / Earth */
+  --color-amber-dark: #3E362F;  /* Deep Roasted Charcoal Accent */
+}
+
+/* Base Clean Canvas */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F2F1ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BFB5;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E362F;
+}
+
+/* Hide scrollbar for category pills on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle Card Shadows */
+.shadow-xs {
+  box-shadow: 0 1px 2px rgba(26, 24, 22, 0.04);
+}
+.shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(26, 24, 22, 0.08);
+}
+
+/* ==========================================================
+   SCROLL PROGRESS BAR (Top of Page)
+   ========================================================== */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #6E6155, #181716);
+  z-index: 100;
+  transition: width 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 0 8px rgba(110, 97, 85, 0.3);
+}
+
+/* ==========================================================
+   SMOOTH SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+   ========================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Directional Variations */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-down {
+  opacity: 0;
+  transform: translateY(-28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93) translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Active Revealed State */
+.reveal-on-scroll.revealed,
+.reveal-fade-up.revealed,
+.reveal-fade-down.revealed,
+.reveal-fade-left.revealed,
+.reveal-fade-right.revealed,
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Cascading Stagger Delays */
+.delay-75 { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* ==========================================================
+   INFINITE SCROLLING RUNNING TEXT (MARQUEE RIBBON)
+   ========================================================== */
+.marquee-container {
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-sand), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-sand), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scrollMarquee 32s linear infinite;
+}
+
+.marquee-track.reverse {
+  animation: scrollMarqueeReverse 36s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollMarqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ==========================================================
+   FLOATING BACK TO TOP BUTTON WITH SCROLL RING
+   ========================================================== */
+#backToTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 45;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(26, 24, 22, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#backToTopBtn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+#backToTopBtn:hover {
+  background: var(--color-sand);
+  border-color: var(--color-ink);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 24px rgba(26, 24, 22, 0.16);
+}
+
+/* When floating cart bar is active, adjust back-to-top position on mobile */
+@media (max-width: 640px) {
+  #backToTopBtn {
+    bottom: 84px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ==========================================================
+   ACTIVE NAV LINK INDICATOR (SCROLL SPY)
+   ========================================================== */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-amber-dark);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link.active-nav {
+  color: var(--color-ink) !important;
+  font-weight: 700;
+}
+
+.nav-link.active-nav::after {
+  width: 100%;
+}
+
+/* Touch feedback */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}

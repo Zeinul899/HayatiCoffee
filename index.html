@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hayati Coffee Roaster — Authentic Roastery & Artisanal Coffee Yogyakarta</title>
+  <meta name="description" content="Hayati Coffee Roaster Yogyakarta. Kedai kopi & roastery artisanal di Demangan Baru, Sleman. Menyajikan espresso bar & single origin manual brew pilihan. Buka setiap hari 08.00–23.00 WIB.">
+  <meta name="keywords" content="Hayati Coffee, Hayati Coffee Roaster, Coffee Shop Jogja, Roastery Yogyakarta, Demangan Baru, Manual Brew V60, Espresso Jogja">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hayati Coffee Roaster — Authentic Roastery & Artisanal Coffee">
+  <meta property="og:description" content="Kedai kopi artisanal di Demangan Baru, Sleman, Yogyakarta. Buka setiap hari 08.00–23.00 WIB.">
+  <meta property="og:image" content="assets/images/hayati-signature-iced.jpg">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN with unified cohesive palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sand: '#F2F1ED',       // Warm concrete / raw stone ash (tenang, diam, adem)
+              canvas: '#FFFFFF',     // Clean white surfaces
+              surface: '#EAE8E3',    // Muted cement / stone surface
+              border: '#DCD8D0',     // Subtle concrete hairline border
+              borderDark: '#C4BFB5', // Focused edge
+              ink: '#181716',        // Deep carbon black (matte, tenang, kontras tegas)
+              inkSoft: '#5C5955',    // Secondary body text (tenang & adem)
+              inkMuted: '#88847E',   // Muted stone metadata
+              amber: '#6E6155',      // Subdued warm espresso / earth (bukan oranye menyala)
+              amberDark: '#3E362F',  // Deep roasted charcoal espresso
+              amberLight: '#E8E5DF'  // Subtle concrete tint
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          letterSpacing: {
+            widestPlus: '0.22em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Hayati Coffee Roaster / Hayati Specialty Coffee",
+    "image": "assets/images/hayati-facade-day.jpg",
+    "telephone": "+6281225345877",
+    "priceRange": "Rp15.000–Rp47.000",
+    "servesCuisine": "Specialty Coffee, Signature Espresso, Coffee Mocktail, Non-Coffee, Food Meals, Single Origin Beans",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Demangan Baru No. 7, Caturtunggal, Depok",
+      "addressLocality": "Kabupaten Sleman",
+      "addressRegion": "Daerah Istimewa Yogyakarta",
+      "postalCode": "55281",
+      "addressCountry": "ID"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "23:00"
+    }
+  }
+  </script>
+</head>
+<body class="bg-brand-sand text-brand-ink font-sans antialiased selection:bg-brand-amber selection:text-white pb-20">
+
+  <!-- TOP READING & SCROLL PROGRESS BAR -->
+  <div id="scrollProgressBar"></div>
+
+  <!-- TOP LIVE STATUS BAR -->
+  <aside class="border-b border-brand-border bg-white text-xs text-brand-inkSoft py-2 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+        </span>
+        <span id="liveStatusText" class="font-medium text-brand-ink">
+          Buka Hari Ini • 08.00 – 23.00 WIB
+        </span>
+        <span class="hidden md:inline text-brand-borderDark">•</span>
+        <span class="hidden md:inline text-brand-inkMuted">Jl. Demangan Baru No. 7, Sleman, Yogyakarta</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px] font-semibold">
+        <a href="https://wa.me/6281225345877?text=Halo%20Hayati%20Coffee%20Roaster" target="_blank" rel="noopener" class="text-brand-amberDark hover:text-brand-ink transition flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-amber"></i>
+          <span>+62 812-2534-5877</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- STICKY NAVBAR -->
+  <header id="mainNavbar" class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-brand-border transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Identity Logo with Clean Avatar -->
+        <a href="index.html" class="flex items-center gap-3 focus:outline-none group">
+          <img src="assets/images/hayati-logo.jpg" alt="Hayati Logo" class="w-9 h-9 rounded-xl border border-brand-border object-cover">
+          <div class="flex flex-col items-start">
+            <span class="font-display font-extrabold text-2xl tracking-tight text-brand-ink group-hover:text-brand-amberDark transition duration-200">
+              hayati
+            </span>
+            <span class="text-[9px] font-bold uppercase tracking-widestPlus text-brand-inkMuted -mt-1">
+              COFFEE ROASTER
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation with ScrollSpy Indicator -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-brand-inkSoft">
+          <a href="#tentang" class="nav-link hover:text-brand-ink transition duration-150 py-2">
+            Tentang
+          </a>
+          <a href="menu.html" class="nav-link hover:text-brand-ink transition duration-150 py-2 flex items-center gap-1.5 font-bold text-brand-ink">
+            <span>Katalog Menu</span>
+            <span class="text-[10px] bg-brand-surface border border-brand-border px-1.5 py-0.5 rounded text-brand-amberDark">35+</span>
+          </a>
+          <a href="#craft" class="nav-link hover:text-brand-ink transition duration-150 py-2">
+            Proses Sangrai
+          </a>
+          <a href="#galeri" class="nav-link hover:text-brand-ink transition duration-150 py-2">
+            Suasana
+          </a>
+          <a href="#lokasi" class="nav-link hover:text-brand-ink transition duration-150 py-2">
+            Lokasi
+          </a>
+        </nav>
+
+        <!-- Right Call to Action Buttons -->
+        <div class="flex items-center gap-3">
+          <!-- Cart Button -->
+          <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-brand-border bg-white text-brand-ink hover:border-brand-ink hover:bg-brand-surface transition flex items-center gap-2 shadow-xs" title="Lihat Keranjang Pesanan">
+            <i data-lucide="shopping-bag" class="w-4 h-4 text-brand-amberDark"></i>
+            <span id="navCartCount" class="bg-brand-ink text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full min-w-[18px] text-center">0</span>
+          </button>
+
+          <a href="menu.html" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-brand-borderDark bg-white text-brand-ink font-semibold text-xs uppercase tracking-wider hover:bg-brand-surface transition shadow-xs">
+            <span>Lihat Menu</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-amberDark"></i>
+          </a>
+
+          <button onclick="openWhatsAppModal()" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-ink text-white font-semibold text-xs uppercase tracking-wider hover:bg-brand-amberDark active:scale-95 transition shadow-sm">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>Reservasi WA</span>
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button id="mobileMenuBtn" aria-label="Menu" class="md:hidden p-2.5 rounded-xl border border-brand-border text-brand-ink hover:bg-brand-surface transition">
+            <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Dropdown -->
+    <div id="mobileDrawer" class="hidden md:hidden border-b border-brand-border bg-white px-5 pt-3 pb-6 space-y-3">
+      <nav class="flex flex-col space-y-2 text-sm font-semibold text-brand-inkSoft">
+        <a href="#tentang" onclick="closeMobileDrawer()" class="py-2.5 border-b border-brand-border/60 hover:text-brand-ink flex items-center justify-between">
+          <span>Tentang Kami</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-inkMuted"></i>
+        </a>
+        <a href="menu.html" class="py-2.5 border-b border-brand-border/60 hover:text-brand-ink flex items-center justify-between text-brand-ink font-bold">
+          <span>Katalog Menu Lengkap (35+ Item)</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-brand-amberDark"></i>
+        </a>
+        <a href="#craft" onclick="closeMobileDrawer()" class="py-2.5 border-b border-brand-border/60 hover:text-brand-ink flex items-center justify-between">
+          <span>Proses Sangrai &amp; Produksi</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-inkMuted"></i>
+        </a>
+        <a href="#galeri" onclick="closeMobileDrawer()" class="py-2.5 border-b border-brand-border/60 hover:text-brand-ink flex items-center justify-between">
+          <span>Suasana Kedai</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-inkMuted"></i>
+        </a>
+        <a href="#lokasi" onclick="closeMobileDrawer()" class="py-2.5 border-b border-brand-border/60 hover:text-brand-ink flex items-center justify-between">
+          <span>Lokasi &amp; Kontak</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-inkMuted"></i>
+        </a>
+      </nav>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="menu.html" class="w-full py-3 rounded-full border border-brand-border bg-brand-surface text-brand-ink font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+          <i data-lucide="coffee" class="w-4 h-4 text-brand-amberDark"></i>
+          Buka Katalog Menu Lengkap
+        </a>
+        <button onclick="closeMobileDrawer(); openWhatsAppModal();" class="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          Reservasi Meja via WA
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION (Quiet Architectural Aesthetic — Bersih, Tenang, Gambar Jelas Tanpa Blur Menutupi) -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-brand-sand border-b border-brand-border overflow-hidden">
+
+      <!-- Subtle Quiet Ambient Light Gradient (Zero Clutter, Zero Spilling Blur) -->
+      <div class="absolute inset-0 pointer-events-none select-none bg-gradient-to-b from-white/50 via-transparent to-brand-sand/60"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Left Column: Quiet Typography & Actions -->
+          <div class="lg:col-span-7 space-y-7 reveal-fade-left">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-border shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-brand-ink"></span>
+              <span class="text-xs uppercase tracking-wider font-bold text-brand-inkSoft">
+                Artisanal Roastery • Yogyakarta
+              </span>
+            </div>
+
+            <div class="space-y-4">
+              <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05] text-brand-ink">
+                Authentic Roastery &amp; <br>
+                <span class="text-brand-amber">Artisanal Coffee.</span>
+              </h1>
+              <p class="text-base sm:text-lg text-brand-inkSoft max-w-xl font-normal leading-relaxed">
+                Menyajikan pengalaman seduh kopi presisi dengan dedikasi tinggi. Dari kurasi biji pilihan Nusantara, proses sangrai in-house, hingga secangkir kopi berkarakter di Demangan Baru, Yogyakarta.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="menu.html" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-brand-ink text-white font-bold text-sm tracking-wide hover:bg-brand-amberDark transition duration-150 shadow-sm active:scale-95">
+                <span>Buka Menu Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+
+              <a href="https://maps.google.com/?q=Hayati+Coffee+Demangan+Baru+Yogyakarta" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-white border border-brand-border text-brand-ink font-semibold text-sm tracking-wide hover:border-brand-ink hover:bg-brand-surface transition duration-150 active:scale-95 shadow-xs">
+                <i data-lucide="map-pin" class="w-4 h-4 text-brand-ink"></i>
+                <span>Lokasi Maps</span>
+              </a>
+            </div>
+
+            <div class="pt-6 border-t border-brand-border grid grid-cols-3 gap-6 text-left">
+              <div>
+                <p class="font-display font-bold text-2xl sm:text-3xl text-brand-ink">100%</p>
+                <p class="text-xs text-brand-inkMuted font-medium uppercase tracking-wider mt-0.5">Specialty Grade</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-2xl sm:text-3xl text-brand-ink">08–23</p>
+                <p class="text-xs text-brand-inkMuted font-medium uppercase tracking-wider mt-0.5">WIB Buka Tiap Hari</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-2xl sm:text-3xl text-brand-ink">4.8 ★</p>
+                <p class="text-xs text-brand-inkMuted font-medium uppercase tracking-wider mt-0.5">Ulasan Google</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Visual Showcase (Foto Asli 100% Jernih & Bebas Halangan) -->
+          <div class="lg:col-span-5 relative reveal-fade-right">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <div class="rounded-3xl overflow-hidden border border-brand-border bg-white shadow-sm hover:shadow-md transition duration-300">
+                
+                <!-- Authentic Photo — Clean, Crisp, Not Obscured by Any Overlay -->
+                <div class="relative overflow-hidden group">
+                  <img 
+                    src="assets/images/hayati-signature-iced.jpg" 
+                    alt="Hayati Signature Iced Coffee" 
+                    class="w-full h-[420px] sm:h-[460px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                  >
+                  <!-- Clean Location Pill -->
+                  <div class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 border border-brand-border text-xs font-semibold text-brand-ink shadow-xs">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>Demangan Baru No. 7</span>
+                  </div>
+                </div>
+
+                <!-- Product Details Cleanly BELOW Photo (Tidak Menutupi Gambar) -->
+                <div class="p-5 bg-white border-t border-brand-border space-y-3">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-surface text-brand-ink border border-brand-border">Signature Drink</span>
+                        <span class="text-xs text-brand-inkMuted">• Full Arabica</span>
+                      </div>
+                      <h2 class="font-display font-bold text-xl text-brand-ink mt-1">Hayati Punya Es Kopi</h2>
+                      <p class="text-xs text-brand-inkSoft mt-1 leading-relaxed">
+                        House blend khas dengan racikan susu segar dan gula aren spesial.
+                      </p>
+                    </div>
+                    <div class="text-right shrink-0">
+                      <span class="font-display font-black text-xl text-brand-ink tabular-nums block">Rp 28.000</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-brand-border/60 flex items-center justify-between">
+                    <span class="text-[11px] text-brand-inkMuted flex items-center gap-1.5 font-medium">
+                      <i data-lucide="flame" class="w-3.5 h-3.5 text-brand-amber"></i> In-House Roasted
+                    </span>
+                    <button 
+                      onclick="addToCart('hayati-punya-es-kopi', 'Hayati Punya Es Kopi', 28000, 'Coffee Based & Signature')" 
+                      class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-ink text-white font-bold text-xs hover:bg-brand-amberDark transition shadow-xs active:scale-95"
+                    >
+                      <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                      <span>+ Pesan</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFINITE RUNNING TICKER MARQUEE ON SCROLL -->
+    <div class="py-3.5 bg-brand-surface border-b border-brand-border overflow-hidden marquee-container">
+      <div class="marquee-track flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.22em] text-brand-inkSoft whitespace-nowrap">
+        <span>Authentic Roastery</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Demangan Baru No. 7</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>100% Specialty Arabica</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>In-House Micro Roasting</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Single Origin &amp; House Blend</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Buka Setiap Hari 08.00 – 23.00 WIB</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Hayati Specialty Coffee</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <!-- Repeated for seamless loop -->
+        <span>Authentic Roastery</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Demangan Baru No. 7</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>100% Specialty Arabica</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>In-House Micro Roasting</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Single Origin &amp; House Blend</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Buka Setiap Hari 08.00 – 23.00 WIB</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+        <span>Hayati Specialty Coffee</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber"></span>
+      </div>
+    </div>
+
+    <!-- SECTION TENTANG (Authentic Storytelling & Assets) -->
+    <section id="tentang" class="py-20 bg-white border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal-fade-left">
+            <div class="space-y-4">
+              <div class="rounded-2xl overflow-hidden border border-brand-border bg-brand-sand group shadow-sm">
+                <img src="assets/images/hayati-facade-day.jpg" alt="Fasad Beton Hayati Coffee" class="w-full h-56 object-cover object-center group-hover:scale-105 transition duration-500">
+                <div class="p-3 bg-white border-t border-brand-border">
+                  <p class="text-xs font-bold text-brand-ink">Fasad Beton Ikonik</p>
+                  <p class="text-[10px] text-brand-inkMuted">Jl. Demangan Baru No. 7</p>
+                </div>
+              </div>
+              <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand flex flex-col justify-between shadow-xs">
+                <i data-lucide="sparkles" class="w-5 h-5 text-brand-amberDark mb-2"></i>
+                <div>
+                  <p class="font-display font-bold text-base text-brand-ink">Artisan Spirit</p>
+                  <p class="text-xs text-brand-inkSoft mt-1">Konsistensi profil rasa dari pemilahan green bean hingga ke cangkir Anda.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4 pt-6">
+              <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand shadow-xs">
+                <p class="font-display font-extrabold text-3xl text-brand-amberDark">07</p>
+                <p class="text-xs font-bold text-brand-ink mt-1">Demangan Baru</p>
+                <p class="text-[11px] text-brand-inkMuted mt-0.5">Pusat kedai kopi &amp; roastery Sleman</p>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-brand-border bg-brand-sand group shadow-sm">
+                <img src="assets/images/hayati-roastery-shelf.jpg" alt="Rak Biji Kopi Retail Hayati" class="w-full h-56 object-cover object-center group-hover:scale-105 transition duration-500">
+                <div class="p-3 bg-white border-t border-brand-border">
+                  <p class="text-xs font-bold text-brand-ink">Roastery Bean Shelf</p>
+                  <p class="text-[10px] text-brand-inkMuted">Kurasi biji Nusantara sangrai segar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6 lg:pl-6 reveal-fade-right">
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-amberDark">
+              <span class="w-6 h-0.5 bg-brand-amber"></span>
+              Tentang Hayati Coffee Roaster
+            </div>
+
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-ink leading-tight">
+              Kisah di balik setiap seduhan &amp; ruang hangat untuk Anda.
+            </h2>
+
+            <div class="space-y-4 text-brand-inkSoft text-sm sm:text-base leading-relaxed">
+              <p>
+                Terletak di kawasan strategis Demangan Baru Yogyakarta, <strong class="text-brand-ink font-semibold">Hayati Coffee Roaster / Hayati Specialty Coffee</strong> didirikan sebagai tempat bertemunya para penikmat kopi yang menghargai ketelitian rasa, estetika minimalis, dan atmosfer yang menenangkan.
+              </p>
+              <p>
+                Kami menyangrai biji kopi pilihan secara in-house dengan profil sangrai yang dirancang khusus untuk menonjolkan keunikan karakter terroir, rasa manis alami, serta aroma floral dan buah-buahan asli Nusantara.
+              </p>
+              <p>
+                Bagi kami, kedai kopi bukan sekadar tempat singgah—melainkan ruang untuk berproses, bertukar ide, menikmati heningnya pagi, atau bercengkerama santai hingga larut malam.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-border shadow-xs">
+                <div class="w-9 h-9 rounded-lg bg-white border border-brand-border flex items-center justify-center text-brand-amberDark shrink-0">
+                  <i data-lucide="cpu" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-brand-ink">Precision Roasting</h4>
+                  <p class="text-xs text-brand-inkSoft mt-0.5">Pengendalian suhu & waktu roasting mikro untuk hasil konsisten.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-border shadow-xs">
+                <div class="w-9 h-9 rounded-lg bg-white border border-brand-border flex items-center justify-center text-brand-amberDark shrink-0">
+                  <i data-lucide="wifi" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-brand-ink">Productive Space</h4>
+                  <p class="text-xs text-brand-inkSoft mt-0.5">Wi-Fi andal, stopkontak memadai, & AC sejuk nyaman.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION ROASTERY CRAFT & PROCESS (New Photos: Cupping, Farm, Grading, Machine) -->
+    <section id="craft" class="py-20 bg-brand-sand border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center space-y-3 mb-14 reveal-fade-up">
+          <span class="text-xs uppercase tracking-wider font-bold text-brand-amberDark">
+            Seni &amp; Standar Roastery
+          </span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-ink tracking-tight">
+            Dedikasi Dari Perkebunan Hingga Meja Cupping
+          </h2>
+          <p class="text-sm text-brand-inkSoft">
+            Menjaga standar kualitas kopi specialty melalui proses grading ketat, sangrai mikro, dan sesi cupping berkala.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-group">
+          
+          <!-- Card 1: Coffee Life Cycle -->
+          <div class="rounded-3xl overflow-hidden border border-brand-border bg-white shadow-sm flex flex-col justify-between reveal-fade-up">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="assets/images/hayati-coffee-farm.jpg" alt="Coffee Life Cycle Hayati" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-amberDark">Farm to Cup</span>
+              <h3 class="font-display font-bold text-lg text-brand-ink">Coffee Life Cycle</h3>
+              <p class="text-xs text-brand-inkSoft leading-relaxed">
+                Bekerja sama erat dengan petani lokal untuk memastikan buah ceri dipetik pada kematangan optimal.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Bean Grading & Roaster Machine -->
+          <div class="rounded-3xl overflow-hidden border border-brand-border bg-white shadow-sm flex flex-col justify-between reveal-fade-up delay-150">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="assets/images/hayati-roaster-production.jpg" alt="Behind The Scenes Roasting Hayati" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-amberDark">In-House Production</span>
+              <h3 class="font-display font-bold text-lg text-brand-ink">Precision Micro-Roasting</h3>
+              <p class="text-xs text-brand-inkSoft leading-relaxed">
+                Pemantauan profil sangrai detik demi detik guna mengeluarkan notes manis alami dan acidity yang jernih.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Public Cupping -->
+          <div class="rounded-3xl overflow-hidden border border-brand-border bg-white shadow-sm flex flex-col justify-between reveal-fade-up delay-300">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="assets/images/hayati-public-cupping.jpg" alt="Public Cupping Hayati" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-amberDark">Sensory Evaluation</span>
+              <h3 class="font-display font-bold text-lg text-brand-ink">Public Cupping Session</h3>
+              <p class="text-xs text-brand-inkSoft leading-relaxed">
+                Evaluasi sensorik cita rasa bersama komunitas untuk menjaga kalibrasi rasa setiap batch sangrai.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION MENU PREVIEW (Curated Highlight with Link to Full Menu) -->
+    <section id="menu" class="py-24 bg-white border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal-on-scroll">
+          <div class="space-y-3">
+            <span class="text-xs uppercase tracking-wider font-bold text-brand-amberDark">
+              Sorotan Menu Populer
+            </span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-ink">
+              Koleksi Favorit Hayati
+            </h2>
+            <p class="text-brand-inkSoft text-sm max-w-xl">
+              Pilihan terfavorit dari 35+ menu yang tersedia. Klik "+ Keranjang" untuk memesan, atau buka katalog lengkap untuk melihat seluruh menu.
+            </p>
+          </div>
+          <a href="menu.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-amberDark transition shadow-sm shrink-0">
+            <span>Buka Katalog Lengkap (35+ Menu)</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- 4 Curated Highlights Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Item 1: Hayati Punya Es Kopi -->
+          <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand/60 hover:bg-white hover:border-brand-borderDark transition duration-150 flex flex-col justify-between shadow-xs reveal-on-scroll">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-ink text-white">Signature</span>
+                <span class="font-display font-bold text-base text-brand-ink">Rp 28.000</span>
+              </div>
+              <h3 class="font-bold text-base text-brand-ink">Hayati Punya Es Kopi</h3>
+              <p class="text-xs text-brand-inkSoft mt-1.5 leading-relaxed">Full Arabica Signature house blend dengan racikan susu segar dan gula aren spesial.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border flex justify-between items-center">
+              <span class="text-[11px] text-brand-amberDark font-semibold">Coffee Based</span>
+              <button onclick="addToCart('hayati-punya-es-kopi', 'Hayati Punya Es Kopi', 28000, 'Coffee Based & Signature')" class="px-3 py-1.5 rounded-full bg-brand-ink text-white text-xs font-bold hover:bg-brand-amberDark transition">
+                + Keranjang
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 2: Mix Berries Cream -->
+          <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand/60 hover:bg-white hover:border-brand-borderDark transition duration-150 flex flex-col justify-between shadow-xs reveal-on-scroll">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-surface text-brand-inkMuted border border-brand-border">Cold Brew</span>
+                <span class="font-display font-bold text-base text-brand-ink">Rp 32.000</span>
+              </div>
+              <h3 class="font-bold text-base text-brand-ink">Mix Berries Cream</h3>
+              <p class="text-xs text-brand-inkSoft mt-1.5 leading-relaxed">Overnight cold brew dengan sirup berry dan lapisan strawberry cream lembut.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border flex justify-between items-center">
+              <span class="text-[11px] text-brand-amberDark font-semibold">Coffee Mocktail</span>
+              <button onclick="addToCart('mix-berries-cream', 'Mix Berries Cream', 32000, 'Coffee Mocktail & Cold Brew')" class="px-3 py-1.5 rounded-full bg-brand-ink text-white text-xs font-bold hover:bg-brand-amberDark transition">
+                + Keranjang
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 3: Chicken Sambal Matah -->
+          <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand/60 hover:bg-white hover:border-brand-borderDark transition duration-150 flex flex-col justify-between shadow-xs reveal-on-scroll">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-surface text-brand-inkMuted border border-brand-border">Favorite Meal</span>
+                <span class="font-display font-bold text-base text-brand-ink">Rp 34.000</span>
+              </div>
+              <h3 class="font-bold text-base text-brand-ink">Chicken Sambal Matah</h3>
+              <p class="text-xs text-brand-inkSoft mt-1.5 leading-relaxed">Nasi hangat dengan ayam goreng renyah dan racikan sambal matah khas Bali pedas segar.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border flex justify-between items-center">
+              <span class="text-[11px] text-brand-amberDark font-semibold">Heavy Meal</span>
+              <button onclick="addToCart('chicken-sambal-matah', 'Chicken Sambal Matah Rice Bowl', 34000, 'Food & Heavy Meals')" class="px-3 py-1.5 rounded-full bg-brand-ink text-white text-xs font-bold hover:bg-brand-amberDark transition">
+                + Keranjang
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 4: Argopuro Lychee Sorbet -->
+          <div class="p-5 rounded-2xl border border-brand-border bg-brand-sand/60 hover:bg-white hover:border-brand-borderDark transition duration-150 flex flex-col justify-between shadow-xs reveal-on-scroll">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-surface text-brand-inkMuted border border-brand-border">Anaerob Natural</span>
+                <span class="font-display font-bold text-base text-brand-ink">Rp 92.000</span>
+              </div>
+              <h3 class="font-bold text-base text-brand-ink">Argopuro Lychee Sorbet</h3>
+              <p class="text-xs text-brand-inkSoft mt-1.5 leading-relaxed">Biji sangrai single origin kemasan pouch. Tasting notes: Sweet Lychee &amp; White Floral.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border flex justify-between items-center">
+              <span class="text-[11px] text-brand-amberDark font-semibold">Retail Beans</span>
+              <button onclick="addToCart('beans-argopuro', 'Argopuro Lychee Sorbet', 92000, 'Biji Kopi Beans')" class="px-3 py-1.5 rounded-full bg-brand-ink text-white text-xs font-bold hover:bg-brand-amberDark transition">
+                + Keranjang
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner to Full Menu Page -->
+        <div class="mt-12 p-6 rounded-3xl bg-brand-surface border border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left reveal-on-scroll">
+          <div>
+            <h3 class="font-bold text-base text-brand-ink">Ingin melihat seluruh pilihan menu?</h3>
+            <p class="text-xs text-brand-inkSoft">Tersedia 35+ varian Coffee Mocktail, Non-Coffee, Steak, Pasta, hingga Biji Kopi Roastery.</p>
+          </div>
+          <a href="menu.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-amberDark transition shrink-0">
+            <span>Buka Katalog Lengkap</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION SUASANA & GALERI -->
+    <section id="galeri" class="py-24 bg-brand-sand border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
+          <div class="space-y-3">
+            <span class="text-xs uppercase tracking-wider font-bold text-brand-amberDark">
+              Visual &amp; Atmosphere
+            </span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-ink">
+              Suasana Hayati Coffee Roaster
+            </h2>
+            <p class="text-brand-inkSoft text-sm max-w-xl">
+              Perpaduan arsitektur modern minimalis, dinding tekstur semen bergelombang yang khas, serta pencahayaan hangat untuk momen ngopi terbaik Anda.
+            </p>
+          </div>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-brand-ink hover:text-brand-amberDark transition">
+            <i data-lucide="instagram" class="w-4 h-4 text-brand-amber"></i>
+            <span>Instagram @hayaticoffee</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="group relative rounded-3xl overflow-hidden border border-brand-border bg-white aspect-[3/4] shadow-sm reveal-on-scroll">
+            <img src="assets/images/hayati-signature-iced.jpg" alt="Signature Iced Coffee" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300">House Specialty</span>
+              <h4 class="font-display font-bold text-base mt-0.5">Signature Iced Coffee</h4>
+              <p class="text-xs text-white/80">Sajian kopi khas karamel.</p>
+            </div>
+          </div>
+
+          <div class="group relative rounded-3xl overflow-hidden border border-brand-border bg-white aspect-[3/4] shadow-sm reveal-on-scroll">
+            <img src="assets/images/hayati-facade-day.jpg" alt="Fasad Siang" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300">Architecture</span>
+              <h4 class="font-display font-bold text-base mt-0.5">Fluted Concrete Wall</h4>
+              <p class="text-xs text-white/80">Fasad modern Demangan Baru.</p>
+            </div>
+          </div>
+
+          <div class="group relative rounded-3xl overflow-hidden border border-brand-border bg-white aspect-[3/4] shadow-sm reveal-on-scroll">
+            <img src="assets/images/hayati-roastery-shelf.jpg" alt="Rak Kopi" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300">Roastery Bar</span>
+              <h4 class="font-display font-bold text-base mt-0.5">Single Origin Retail</h4>
+              <p class="text-xs text-white/80">Kurasi biji kopi segar.</p>
+            </div>
+          </div>
+
+          <div class="group relative rounded-3xl overflow-hidden border border-brand-border bg-white aspect-[3/4] shadow-sm reveal-on-scroll">
+            <img src="assets/images/hayati-facade-night.jpg" alt="Fasad Malam" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300">Night Vibe</span>
+              <h4 class="font-display font-bold text-base mt-0.5">Warm Glowing Sign</h4>
+              <p class="text-xs text-white/80">Kedai buka hingga 23.00 WIB.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION LOKASI & OPERASIONAL -->
+    <section id="lokasi" class="py-24 bg-white border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <div class="lg:col-span-6 flex flex-col justify-between space-y-8 reveal-on-scroll">
+            <div class="space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sand border border-brand-border text-xs uppercase tracking-wider text-brand-amberDark font-bold shadow-xs">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-amber"></i>
+                Kunjungi Kami
+              </div>
+              <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-brand-ink tracking-tight">
+                Lokasi &amp; Jam Operasional
+              </h2>
+              <p class="text-brand-inkSoft text-sm sm:text-base leading-relaxed">
+                Kami berlokasi di pusat tongkrongan dan kawasan strategis Sleman, siap melayani kebutuhan kopi pagi hingga obrolan malam Anda.
+              </p>
+            </div>
+
+            <!-- Detail Cards -->
+            <div class="space-y-4">
+              <!-- Alamat -->
+              <div class="p-5 rounded-2xl bg-brand-sand border border-brand-border flex items-start gap-4 shadow-xs">
+                <div class="w-12 h-12 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-amberDark shrink-0 mt-0.5">
+                  <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1 flex-1">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-amberDark">Alamat Kedai</p>
+                    <button onclick="copyAddress()" class="text-[11px] font-semibold text-brand-inkSoft hover:text-brand-ink transition flex items-center gap-1">
+                      <i data-lucide="copy" class="w-3 h-3"></i> Salin Alamat
+                    </button>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-ink">Jl. Demangan Baru No. 7</h3>
+                  <p class="text-xs sm:text-sm text-brand-inkSoft">
+                    Caturtunggal, Depok, Sleman, DIY 55281
+                  </p>
+                </div>
+              </div>
+
+              <!-- Jam Buka -->
+              <div class="p-5 rounded-2xl bg-brand-sand border border-brand-border flex items-start gap-4 shadow-xs">
+                <div class="w-12 h-12 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-amberDark shrink-0 mt-0.5">
+                  <i data-lucide="clock" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1 flex-1">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-amberDark">Jam Operasional</p>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                      Setiap Hari
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-brand-ink">08.00 – 23.00 WIB</h3>
+                  <p class="text-xs sm:text-sm text-brand-inkSoft">
+                    Buka dari pagi untuk ngopi &amp; kerja, hingga malam untuk bersantai.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Kontak WA -->
+              <div class="p-5 rounded-2xl bg-brand-sand border border-brand-border flex items-start gap-4 shadow-xs">
+                <div class="w-12 h-12 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-amberDark shrink-0 mt-0.5">
+                  <i data-lucide="phone-call" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1 flex-1">
+                  <p class="text-xs font-bold uppercase tracking-wider text-brand-amberDark">Kontak WhatsApp Admin</p>
+                  <h3 class="text-base font-bold text-brand-ink">+62 812-2534-5877</h3>
+                  <p class="text-xs sm:text-sm text-brand-inkSoft">
+                    Layanan aktif untuk pemesanan rombongan, reservasi meja, atau takeaway.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a 
+                href="https://maps.google.com/?q=Hayati+Coffee+Demangan+Baru+Yogyakarta" 
+                target="_blank" 
+                rel="noopener" 
+                class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-amberDark transition duration-150 shadow-sm"
+              >
+                <i data-lucide="navigation" class="w-4 h-4"></i>
+                <span>Petunjuk Arah (Maps)</span>
+              </a>
+
+              <a 
+                href="https://wa.me/6281225345877?text=Halo%20Hayati%20Coffee%20Roaster%2C%20saya%20ingin%20reservasi%20meja%20%2F%20tanya%20menu" 
+                target="_blank" 
+                rel="noopener" 
+                class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white border border-brand-border text-brand-ink font-bold text-xs uppercase tracking-wider hover:border-brand-ink transition duration-150 shadow-xs"
+              >
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                <span>Chat WhatsApp Admin</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Google Map -->
+          <div class="lg:col-span-6 flex flex-col justify-between reveal-on-scroll">
+            <div class="h-full min-h-[400px] rounded-3xl overflow-hidden border border-brand-border bg-white relative shadow-sm flex flex-col">
+              <div class="p-4 bg-white border-b border-brand-border flex items-center justify-between text-xs">
+                <span class="font-bold text-brand-ink flex items-center gap-2">
+                  <i data-lucide="map" class="w-4 h-4 text-brand-amber"></i> Google Maps Navigation
+                </span>
+                <span class="text-brand-inkMuted">Demangan Baru, Sleman</span>
+              </div>
+              <div class="flex-1 w-full relative min-h-[340px]">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.076326694389!2d110.39002227588383!3d-7.781755177212457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59c3f4e2f891%3A0xb3a2f981041eeec4!2sHayati%20Coffee!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                  class="w-full h-full border-0" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  title="Peta Lokasi Hayati Coffee Roaster"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- OFFICIAL OPERATIONAL FOOTER -->
+  <footer class="bg-white border-t border-brand-border pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-brand-border">
+        
+        <div class="md:col-span-5 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <img src="assets/images/hayati-logo.jpg" alt="Logo" class="w-7 h-7 rounded-lg border border-brand-border object-cover">
+            <span class="font-display font-black text-2xl tracking-tight text-brand-ink">hayati</span>
+          </div>
+          <p class="text-xs uppercase tracking-widestPlus text-brand-inkMuted -mt-1 font-semibold">
+            HAYATI COFFEE ROASTER / HAYATI SPECIALTY COFFEE
+          </p>
+          <p class="text-xs sm:text-sm text-brand-inkSoft max-w-sm leading-relaxed">
+            Menghadirkan kenikmatan kopi artisanal dengan kejujuran rasa, kurasi roastery presisi, dan suasana santai yang estetik di Demangan Baru.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-brand-sand border border-brand-border flex items-center justify-center text-brand-inkSoft hover:text-brand-ink hover:border-brand-ink transition" title="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/6281225345877" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-brand-sand border border-brand-border flex items-center justify-center text-brand-inkSoft hover:text-brand-ink hover:border-brand-ink transition" title="WhatsApp">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+            <a href="https://maps.google.com/?q=Hayati+Coffee+Demangan+Baru+Yogyakarta" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-brand-sand border border-brand-border flex items-center justify-center text-brand-inkSoft hover:text-brand-ink hover:border-brand-ink transition" title="Google Maps">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-2 text-sm text-brand-inkSoft">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-brand-ink">Navigasi Halaman</h3>
+          <p><a href="#tentang" class="hover:text-brand-ink transition">Tentang Kami</a></p>
+          <p><a href="menu.html" class="hover:text-brand-ink transition font-bold text-brand-ink">Katalog Menu Lengkap (35+)</a></p>
+          <p><a href="#craft" class="hover:text-brand-ink transition">Proses Sangrai</a></p>
+          <p><a href="#galeri" class="hover:text-brand-ink transition">Suasana &amp; Galeri</a></p>
+          <p><a href="#lokasi" class="hover:text-brand-ink transition">Lokasi &amp; Jam Buka</a></p>
+        </div>
+
+        <!-- Official Operational Info in Footer -->
+        <div class="md:col-span-4 space-y-2 text-sm text-brand-inkSoft">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-brand-ink">Informasi Operasional</h3>
+          <p><strong class="text-brand-ink font-semibold">Nama Tempat:</strong> Hayati Coffee Roaster / Hayati Specialty Coffee</p>
+          <p><strong class="text-brand-ink font-semibold">Alamat:</strong> Jl. Demangan Baru No. 7, Caturtunggal, Depok, Sleman, DIY</p>
+          <p><strong class="text-brand-ink font-semibold">Jam Buka:</strong> Setiap Hari (08.00 – 23.00 WIB)</p>
+          <p><strong class="text-brand-ink font-semibold">Nomor WhatsApp Admin:</strong> +62 812-2534-5877</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-inkMuted gap-4">
+        <p>&copy; <span id="yearSpan">2026</span> <strong class="text-brand-ink">Hayati Coffee Roaster</strong>. All Rights Reserved.</p>
+        <p>Crafted with passion in Yogyakarta • <a href="#" class="hover:text-brand-ink font-semibold">Kembali ke Atas ↑</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING CART BAR -->
+  <div id="floatingCartBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden transition-all duration-300 w-[92%] max-w-md">
+    <div class="bg-brand-ink text-white rounded-full p-2 pl-5 shadow-2xl flex items-center justify-between border border-white/10 backdrop-blur-lg">
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-amber"></i>
+          <span id="floatingCartBadge" class="absolute -top-1.5 -right-2 bg-brand-amber text-brand-ink text-[10px] font-black px-1.5 py-0.2 rounded-full">0</span>
+        </div>
+        <div>
+          <p id="floatingCartItems" class="text-xs font-bold text-white">0 Menu Terpilih</p>
+          <p id="floatingCartTotal" class="text-[11px] text-white/70">Rp 0</p>
+        </div>
+      </div>
+      <button onclick="openCartDrawer()" class="px-5 py-2.5 rounded-full bg-white text-brand-ink font-bold text-xs uppercase tracking-wider hover:bg-brand-amberLight transition active:scale-95 shadow-sm">
+        Lihat Pesanan →
+      </button>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER DRAWER KERANJANG -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="closeCartDrawer()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between">
+        
+        <div class="p-6 border-b border-brand-border flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-sand border border-brand-border text-brand-amberDark flex items-center justify-center">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-lg text-brand-ink">Keranjang Pesanan</h3>
+              <p class="text-xs text-brand-inkSoft"><span id="cartItemCountHeader">0</span> menu dipilih</p>
+            </div>
+          </div>
+          <button onclick="closeCartDrawer()" class="p-2 rounded-full hover:bg-brand-sand text-brand-inkSoft hover:text-brand-ink transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <div id="emptyCartState" class="py-16 text-center space-y-3">
+            <div class="w-16 h-16 rounded-full bg-brand-sand mx-auto flex items-center justify-center text-brand-inkMuted">
+              <i data-lucide="coffee" class="w-8 h-8"></i>
+            </div>
+            <p class="text-base font-bold text-brand-ink">Keranjang Masih Kosong</p>
+            <p class="text-xs text-brand-inkSoft max-w-xs mx-auto">
+              Silakan pilih menu minuman atau makanan favorit Anda dan klik tombol <b>"+ Keranjang"</b>.
+            </p>
+          </div>
+
+          <div id="cartItemsContainer" class="space-y-3"></div>
+
+          <div id="cartOrderForm" class="hidden pt-4 border-t border-brand-border space-y-3 text-xs">
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Tipe Pesanan</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-border bg-brand-sand cursor-pointer">
+                  <input type="radio" name="cartOrderType" value="Dine In (Di Tempat)" checked class="text-brand-ink focus:ring-0">
+                  <span class="font-semibold text-brand-ink">Dine In (Di Tempat)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-border bg-brand-sand cursor-pointer">
+                  <input type="radio" name="cartOrderType" value="Take Away (Bungkus)" class="text-brand-ink focus:ring-0">
+                  <span class="font-semibold text-brand-ink">Take Away</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Nama Pemesan</label>
+              <input type="text" id="cartCustomerName" required placeholder="Contoh: Dimas Aditya" class="w-full px-3.5 py-2.5 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Nomor Meja / Catatan Khusus</label>
+              <input type="text" id="cartNotes" placeholder="Contoh: Meja 4, 1 kopi less ice & less sugar" class="w-full px-3.5 py-2.5 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+            </div>
+          </div>
+        </div>
+
+        <div id="cartFooter" class="p-6 border-t border-brand-border bg-brand-sand/50 space-y-4">
+          <div class="space-y-1.5 text-xs">
+            <div class="flex justify-between text-brand-inkSoft">
+              <span>Subtotal Pesanan</span>
+              <span id="cartSubtotalText" class="font-semibold text-brand-ink">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-sm font-bold text-brand-ink pt-1 border-t border-brand-border/60">
+              <span>Total Pembayaran</span>
+              <span id="cartTotalText" class="text-base text-brand-amberDark font-black">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="clearCart()" class="p-3 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-red-600 transition" title="Kosongkan Keranjang">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+            <button 
+              id="checkoutWaBtn" 
+              onclick="checkoutViaWhatsApp()" 
+              class="flex-1 py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-amberDark transition shadow-md active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
+              <span>Kirim Pesanan ke WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL RESERVASI MEJA WA -->
+  <div id="waModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-lg rounded-3xl bg-white border border-brand-border p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-sand border border-brand-border text-brand-amberDark flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-xl text-brand-ink">Reservasi Meja WA</h3>
+            <p class="text-xs text-brand-inkSoft">Hubungi admin Hayati Coffee Roaster</p>
+          </div>
+        </div>
+        <button onclick="closeWhatsAppModal()" class="p-2 rounded-full hover:bg-brand-sand text-brand-inkSoft hover:text-brand-ink transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="waForm" onsubmit="submitWhatsAppForm(event)" class="space-y-4 text-xs">
+        <div>
+          <label for="userName" class="block text-brand-inkSoft uppercase tracking-wider font-semibold mb-1">Nama Lengkap</label>
+          <input type="text" id="userName" required placeholder="Contoh: Dimas Aditya" class="w-full px-4 py-3 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="userDate" class="block text-brand-inkSoft uppercase tracking-wider font-semibold mb-1">Hari / Tanggal</label>
+            <input type="text" id="userDate" placeholder="Hari ini / Besok" class="w-full px-4 py-3 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+          </div>
+          <div>
+            <label for="userTime" class="block text-brand-inkSoft uppercase tracking-wider font-semibold mb-1">Perkiraan Jam</label>
+            <input type="text" id="userTime" placeholder="Contoh: 19.30 WIB" class="w-full px-4 py-3 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+          </div>
+        </div>
+
+        <div>
+          <label for="userMenu" class="block text-brand-inkSoft uppercase tracking-wider font-semibold mb-1">Jumlah Orang &amp; Catatan Khusus</label>
+          <textarea id="userMenu" rows="3" placeholder="Contoh: 4 orang, area indoor non-smoking" class="w-full px-4 py-3 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink resize-none"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-brand-amberDark shadow-sm active:scale-95 transition">
+            <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
+            Kirim Reservasi ke WhatsApp (+62 812-2534-5877)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none px-5 py-3 rounded-2xl bg-brand-ink text-white text-xs font-semibold shadow-xl flex items-center gap-2">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg">Menu ditambahkan ke keranjang!</span>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

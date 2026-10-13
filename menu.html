@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Menu Lengkap — Hayati Coffee Roaster Yogyakarta</title>
+  <meta name="description" content="Katalog menu resmi Hayati Coffee Roaster Yogyakarta. Coffee based, signature, coffee mocktail, non-coffee, food & meals, dan biji kopi single origin.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN with unified cohesive palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sand: '#F2F1ED',
+              canvas: '#FFFFFF',
+              surface: '#EAE8E3',
+              border: '#DCD8D0',
+              borderDark: '#C4BFB5',
+              ink: '#181716',
+              inkSoft: '#5C5955',
+              inkMuted: '#88847E',
+              amber: '#6E6155',
+              amberDark: '#3E362F',
+              amberLight: '#E8E5DF'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-sand text-brand-ink font-sans antialiased selection:bg-brand-amber selection:text-white pb-24">
+
+  <!-- TOP READING & SCROLL PROGRESS BAR -->
+  <div id="scrollProgressBar"></div>
+
+  <!-- TOP HEADER (Clean White Navbar) -->
+  <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Back to Landing Page -->
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-inkSoft hover:text-brand-ink transition">
+        <i data-lucide="arrow-left" class="w-4 h-4 text-brand-amberDark"></i>
+        <span>Beranda</span>
+      </a>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex flex-col items-center">
+        <span class="font-display font-extrabold text-2xl tracking-tight text-brand-ink">
+          hayati
+        </span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.22em] text-brand-inkMuted -mt-1">
+          COFFEE ROASTER
+        </span>
+      </a>
+
+      <!-- Cart Button with live count -->
+      <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-brand-border bg-white text-brand-ink hover:border-brand-ink hover:bg-brand-surface transition flex items-center gap-2 shadow-xs" title="Lihat Keranjang Pesanan">
+        <i data-lucide="shopping-bag" class="w-4 h-4 text-brand-amberDark"></i>
+        <span id="navCartCount" class="bg-brand-ink text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full min-w-[18px] text-center">0</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- PAGE HEADER & SEARCH -->
+  <div class="bg-white border-b border-brand-border py-10 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center space-y-4">
+      <span class="text-xs uppercase tracking-widest font-bold text-brand-amberDark">
+        Daftar Menu Resmi
+      </span>
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-brand-ink tracking-tight">
+        Katalog Lengkap Hayati
+      </h1>
+      <p class="text-sm text-brand-inkSoft max-w-lg mx-auto">
+        Jelajahi seluruh racikan kopi, seduhan dingin, teh artisan, hidangan makanan, serta biji kopi pilihan roastery.
+      </p>
+
+      <!-- Live Search Input -->
+      <div class="pt-2 max-w-md mx-auto relative">
+        <i data-lucide="search" class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-brand-inkMuted"></i>
+        <input 
+          type="text" 
+          id="menuSearchInput" 
+          oninput="handleMenuSearch(this.value)"
+          placeholder="Cari menu... (misal: Latte, Katsu, Beans)" 
+          class="w-full pl-11 pr-4 py-3 rounded-full bg-brand-sand border border-brand-border text-sm text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink focus:bg-white shadow-xs transition"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY FILTER CHIPS (Sticky) -->
+  <div class="sticky top-20 z-30 bg-brand-sand/95 backdrop-blur-md border-b border-brand-border py-3 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-semibold">
+      <button onclick="filterMenuCategory('ALL')" data-category="ALL" class="cat-pill active px-4 py-2 rounded-full border border-brand-ink bg-brand-ink text-white transition whitespace-nowrap">
+        Semua Menu
+      </button>
+      <button onclick="filterMenuCategory('Coffee Based & Signature')" data-category="Coffee Based & Signature" class="cat-pill px-4 py-2 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-brand-ink hover:border-brand-borderDark transition whitespace-nowrap">
+        Coffee Based &amp; Signature
+      </button>
+      <button onclick="filterMenuCategory('Coffee Mocktail & Cold Brew')" data-category="Coffee Mocktail & Cold Brew" class="cat-pill px-4 py-2 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-brand-ink hover:border-brand-borderDark transition whitespace-nowrap">
+        Coffee Mocktail &amp; Cold Brew
+      </button>
+      <button onclick="filterMenuCategory('Non-Coffee & Tea')" data-category="Non-Coffee & Tea" class="cat-pill px-4 py-2 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-brand-ink hover:border-brand-borderDark transition whitespace-nowrap">
+        Non-Coffee &amp; Tea
+      </button>
+      <button onclick="filterMenuCategory('Food & Heavy Meals')" data-category="Food & Heavy Meals" class="cat-pill px-4 py-2 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-brand-ink hover:border-brand-borderDark transition whitespace-nowrap">
+        Food &amp; Meals
+      </button>
+      <button onclick="filterMenuCategory('Biji Kopi Beans')" data-category="Biji Kopi Beans" class="cat-pill px-4 py-2 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-brand-ink hover:border-brand-borderDark transition whitespace-nowrap">
+        Biji Kopi (Retail Beans)
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN MENU CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+    
+    <!-- Results Count -->
+    <div class="flex items-center justify-between pb-6 text-xs text-brand-inkMuted border-b border-brand-border">
+      <span id="menuCountLabel">Menampilkan seluruh menu</span>
+      <span class="text-brand-amberDark font-bold">Harga sudah termasuk pajak</span>
+    </div>
+
+    <!-- Menu Items Grid -->
+    <div id="menuItemsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6"></div>
+
+  </main>
+
+  <!-- FLOATING CART BAR -->
+  <div id="floatingCartBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden transition-all duration-300 w-[92%] max-w-md">
+    <div class="bg-brand-ink text-white rounded-full p-2 pl-5 shadow-2xl flex items-center justify-between border border-white/10 backdrop-blur-lg">
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-amber"></i>
+          <span id="floatingCartBadge" class="absolute -top-1.5 -right-2 bg-brand-amber text-brand-ink text-[10px] font-black px-1.5 py-0.2 rounded-full">0</span>
+        </div>
+        <div>
+          <p id="floatingCartItems" class="text-xs font-bold text-white">0 Menu Terpilih</p>
+          <p id="floatingCartTotal" class="text-[11px] text-white/70">Rp 0</p>
+        </div>
+      </div>
+      <button onclick="openCartDrawer()" class="px-5 py-2.5 rounded-full bg-white text-brand-ink font-bold text-xs uppercase tracking-wider hover:bg-brand-amberLight transition active:scale-95 shadow-sm">
+        Lihat Pesanan →
+      </button>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER DRAWER KERANJANG -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="closeCartDrawer()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between">
+        
+        <div class="p-6 border-b border-brand-border flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-sand border border-brand-border text-brand-amberDark flex items-center justify-center">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-lg text-brand-ink">Keranjang Pesanan</h3>
+              <p class="text-xs text-brand-inkSoft"><span id="cartItemCountHeader">0</span> menu dipilih</p>
+            </div>
+          </div>
+          <button onclick="closeCartDrawer()" class="p-2 rounded-full hover:bg-brand-sand text-brand-inkSoft hover:text-brand-ink transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <div id="emptyCartState" class="py-16 text-center space-y-3">
+            <div class="w-16 h-16 rounded-full bg-brand-sand mx-auto flex items-center justify-center text-brand-inkMuted">
+              <i data-lucide="coffee" class="w-8 h-8"></i>
+            </div>
+            <p class="text-base font-bold text-brand-ink">Keranjang Masih Kosong</p>
+            <p class="text-xs text-brand-inkSoft max-w-xs mx-auto">
+              Silakan pilih menu minuman atau makanan di atas dan klik tombol <b>"+ Keranjang"</b>.
+            </p>
+          </div>
+
+          <div id="cartItemsContainer" class="space-y-3"></div>
+
+          <div id="cartOrderForm" class="hidden pt-4 border-t border-brand-border space-y-3 text-xs">
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Tipe Pesanan</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-border bg-brand-sand cursor-pointer">
+                  <input type="radio" name="cartOrderType" value="Dine In (Di Tempat)" checked class="text-brand-ink focus:ring-0">
+                  <span class="font-semibold text-brand-ink">Dine In (Di Tempat)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-border bg-brand-sand cursor-pointer">
+                  <input type="radio" name="cartOrderType" value="Take Away (Bungkus)" class="text-brand-ink focus:ring-0">
+                  <span class="font-semibold text-brand-ink">Take Away</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Nama Pemesan</label>
+              <input type="text" id="cartCustomerName" required placeholder="Contoh: Dimas Aditya" class="w-full px-3.5 py-2.5 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-ink uppercase tracking-wider mb-1">Nomor Meja / Catatan Khusus</label>
+              <input type="text" id="cartNotes" placeholder="Contoh: Meja 4, 1 kopi less ice & less sugar" class="w-full px-3.5 py-2.5 rounded-xl bg-brand-sand border border-brand-border text-brand-ink placeholder-brand-inkMuted focus:outline-none focus:border-brand-ink">
+            </div>
+          </div>
+        </div>
+
+        <div id="cartFooter" class="p-6 border-t border-brand-border bg-brand-sand/50 space-y-4">
+          <div class="space-y-1.5 text-xs">
+            <div class="flex justify-between text-brand-inkSoft">
+              <span>Subtotal Pesanan</span>
+              <span id="cartSubtotalText" class="font-semibold text-brand-ink">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-sm font-bold text-brand-ink pt-1 border-t border-brand-border/60">
+              <span>Total Pembayaran</span>
+              <span id="cartTotalText" class="text-base text-brand-amberDark font-black">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="clearCart()" class="p-3 rounded-full border border-brand-border bg-white text-brand-inkSoft hover:text-red-600 transition" title="Kosongkan Keranjang">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+            <button 
+              id="checkoutWaBtn" 
+              onclick="checkoutViaWhatsApp()" 
+              class="flex-1 py-3.5 rounded-full bg-brand-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-amberDark transition shadow-md active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
+              <span>Kirim Pesanan ke WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none px-5 py-3 rounded-2xl bg-brand-ink text-white text-xs font-semibold shadow-xl flex items-center gap-2">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg">Menu ditambahkan!</span>
+  </div>
+
+  <!-- FOOTER OPERASIONAL RESMI -->
+  <footer class="mt-24 bg-white border-t border-brand-border pt-12 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-brand-inkSoft">
+        <div>
+          <h3 class="font-bold text-sm text-brand-ink mb-1">Hayati Coffee Roaster / Hayati Specialty Coffee</h3>
+          <p>Authentic Roastery &amp; Artisanal Coffee di Yogyakarta.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-brand-ink mb-1">Alamat Kedai</h4>
+          <p>Jl. Demangan Baru No. 7, Caturtunggal, Depok, Sleman, DIY</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-brand-ink mb-1">Jam Buka &amp; WhatsApp</h4>
+          <p>Setiap Hari (08.00 – 23.00 WIB)</p>
+          <p class="font-semibold text-brand-ink mt-0.5">WhatsApp: +62 812-2534-5877</p>
+        </div>
+      </div>
+      <div class="border-t border-brand-border pt-6 flex justify-between items-center text-[11px] text-brand-inkMuted">
+        <p>&copy; 2026 Hayati Coffee Roaster. All rights reserved.</p>
+        <a href="index.html" class="hover:text-brand-ink font-semibold">Kembali ke Beranda Utama ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Initialize full menu render on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFullMenuGrid(HAYATI_MENU_DATA);
+    });
+
+    let currentCategory = 'ALL';
+    let currentSearchTerm = '';
+
+    function filterMenuCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.getAttribute('data-category') === cat) {
+          btn.classList.add('bg-brand-ink', 'text-white', 'border-brand-ink');
+          btn.classList.remove('bg-white', 'text-brand-inkSoft', 'border-brand-border');
+        } else {
+          btn.classList.remove('bg-brand-ink', 'text-white', 'border-brand-ink');
+          btn.classList.add('bg-white', 'text-brand-inkSoft', 'border-brand-border');
+        }
+      });
+      applyMenuFilters();
+    }
+
+    function handleMenuSearch(term) {
+      currentSearchTerm = term.toLowerCase().trim();
+      applyMenuFilters();
+    }
+
+    function applyMenuFilters() {
+      const filtered = HAYATI_MENU_DATA.filter(item => {
+        const matchCat = (currentCategory === 'ALL') || (item.category === currentCategory);
+        const matchSearch = (!currentSearchTerm) || 
+          item.name.toLowerCase().includes(currentSearchTerm) || 
+          item.description.toLowerCase().includes(currentSearchTerm);
+        return matchCat && matchSearch;
+      });
+      renderFullMenuGrid(filtered);
+    }
+
+    function renderFullMenuGrid(items) {
+      const container = document.getElementById('menuItemsGrid');
+      const countLabel = document.getElementById('menuCountLabel');
+      if (!container) return;
+
+      if (countLabel) {
+        countLabel.textContent = `Menampilkan ${items.length} menu`;
+      }
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-16 text-center space-y-2 reveal-fade-up">
+            <p class="font-bold text-base text-brand-ink">Menu tidak ditemukan</p>
+            <p class="text-xs text-brand-inkSoft">Coba kata kunci lain atau pilih kategori Semua Menu.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      items.forEach((item, idx) => {
+        const delayClass = idx < 12 ? `delay-${Math.min(500, (idx % 6) * 75)}` : '';
+        html += `
+          <div class="p-5 rounded-2xl border border-brand-border bg-white hover:border-brand-borderDark transition duration-150 flex flex-col justify-between shadow-xs reveal-fade-up ${delayClass}">
+            <div>
+              <div class="flex items-start justify-between gap-3 mb-1.5">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h3 class="font-bold text-base text-brand-ink">${item.name}</h3>
+                    ${item.badge ? `<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-surface text-brand-inkMuted border border-brand-border">${item.badge}</span>` : ''}
+                  </div>
+                  <span class="text-[11px] font-semibold text-brand-amberDark">${item.category}</span>
+                </div>
+                <span class="font-display font-bold text-base text-brand-ink tabular-nums shrink-0">${item.priceDisplay}</span>
+              </div>
+              <p class="text-xs text-brand-inkSoft mt-1 leading-relaxed">${item.description}</p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-brand-border/60 flex items-center justify-between">
+              <span class="text-[11px] text-brand-inkMuted font-medium">Bisa pesan banyak</span>
+              <button 
+                onclick="addToCart('${item.id}', '${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.category}')"
+                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-ink text-white text-xs font-bold hover:bg-brand-amberDark transition active:scale-95 shadow-xs"
+              >
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i> Keranjang
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+      if (window.refreshScrollAnimations) {
+        window.refreshScrollAnimations();
+      }
+    }
+  </script>
+</body>
+</html>
